@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pagina com</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        text-align: center;
+        padding: 50px;
+    }
+
+    .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        display: inline-block;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    video {
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
+    .controls button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+</style>
+
+<body>
+    <div class="container">
+    <h1>Assista ao vídeo abaixo</h1>
+    <video id="meuVideo" width="640" controls>
+      <source src="../../multimidia/712ac933-18f4-4057-b55e-7f3ebde802ab 1.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo HTML5.
+    </video>
+    <div class="controls">
+      <button onclick="playVideo()">▶️ Play</button>
+      <button onclick="pauseVideo()">⏸️ Pause</button>
+    </div>
+  </div>
+    <script>
+        function playVideo() {
+            document.getElementById("meuVideo").play();
+        }
+
+        function pauseVideo() {
+            document.getElementById("meuVideo").pause();
+        }
+    </script>
+</body>
+
+</html>

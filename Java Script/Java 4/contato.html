@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f2f5;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .navbar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar li {
+        float: left;
+    }
+
+    .navbar li a {
+        display: block;
+        color: rgb(16, 1, 1);
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+    }
+
+    .navbar li a:hover {
+        background-color: #575757;
+    }
+
+    .container {
+        padding: 50px;
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    .banner {
+        margin-top: 30px;
+    }
+
+    .banner img {
+        width: 80%;
+        max-width: 800px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+</style>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Jogos do Futuro</a></li>
+            <li><a href="contato.html">Contato</a></li>
+
+        </ul>
+    </nav>
+    <h1>Agendamento para Banho e Tosa</h1>
+    <h3>Faça seu agendamento abaixo</h3>
+    <form action="">
+        <fieldset>
+            <legend>Identificação</legend>
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" placeholder="Nome Completo do Dono do Animal" size="29" maxlength="">
+            </div>
+            <br>
+            <div>
+                <label for="nome">Email:</label>
+                <input type="text" name="nome" placeholder="Digite o seu Email" size="20" maxlength="">
+            </div>
+            <br>
+            <div>
+                <label for="nome">Endereço:</label>
+                <input type="text" name="nome" placeholder="Digite o seu Endereço" size="30" maxlength="">
+            </div>
+            <br>
+            <div>
+                <label for="nome">CEP:</label>
+                <input type="text" name="nome" placeholder="XXXXX-XXX" size="10" maxlength="9">
+            </div>
+            <br>
+            <div>
+                <label for="nome">Tell/Cell:</label>
+                <input type="text" name="nome" placeholder="(99) 99999-9999" size="13" maxlength="13">
+            </div>
+        </fieldset>
+        <br>
+        
+        <br>
+        <fieldset>
+            <legend>Horário - (Não antendemos aos Domingos e às Segundas)</legend>
+            <label for="dias">Indique os Dias da Semana de sua preferência:</label>
+            <br>
+
+            <input type="checkbox" nome="ter" id="ter">
+            <label for="ter">Terça-Feira</label>
+
+            <input type="checkbox" nome="qua" id="qua">
+            <label for="qua">Quarta-Feira</label>
+
+            <input type="checkbox" nome="qui" id="qui">
+            <label for="qui">Quinta-Feira</label>
+
+            <input type="checkbox" nome="Sex" id="Sex">
+            <label for="Sex">Sexta-Feira</label>
+            
+            <input type="checkbox" nome="sab" id="sab">
+            <label for="sab">Sabado</label>
+        </fieldset>
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

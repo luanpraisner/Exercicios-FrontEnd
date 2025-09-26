@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banho e Tosa</title>
+</head>
+
+<body>
+    <h1>Meu Amigo Cão - Petshop</h1>
+    <ul>
+        <li>
+            <a href="home.html">Home</a> | <a href="quem-somos.html">Quem Somos</a> | <a
+                href="projeto.html">Produtos</a> | <a href="banho.html">Banho e Tosa</a> | <a
+                href="curiosidades.html">Curiosidades</a> | <a href="obrigado.html">Obrigado</a>
+        </li>
+    </ul>
+
+    <h1>Agendamento para Banho e Tosa</h1>
+    <h3>Faça seu agendamento abaixo</h3>
+    <form action="">
+        <fieldset>
+            <legend>Identificação do Dono do Animal</legend>
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" placeholder="Nome Completo do Dono do Animal" size="29" maxlength="">
+            </div>
+            <br>
+            <div>
+                <label for="nome">Email:</label>
+                <input type="text" name="nome" placeholder="Digite o seu Email" size="20" maxlength="">
+            </div>
+            <br>
+            <div>
+                <label for="nome">Endereço:</label>
+                <input type="text" name="nome" placeholder="Digite o seu Endereço" size="30" maxlength="">
+            </div>
+            <br>
+            <div>
+                <label for="nome">CEP:</label>
+                <input type="text" name="nome" placeholder="XXXXX-XXX" size="10" maxlength="9">
+            </div>
+            <br>
+            <div>
+                <label for="nome">Tell/Cell:</label>
+                <input type="text" name="nome" placeholder="(99) 99999-9999" size="13" maxlength="13">
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Identificação do Animal</legend>
+            <div>
+                <label for="nome">Animal:</label>
+                <input type="text" name="nome" placeholder="Nome do Animal" size="15" maxlength="">
+            </div>
+            <br>
+            <div>
+                <legend>Seleciona o Porte do Cachorro:</legend>
+                <input name="porte" type="radio" value=""> Pequeno Porte
+
+                <input name="porte" type="radio" value=""> Médio Porte
+
+                <input name="porte" type="radio" value=""> Grande Porte
+            </div>
+            <br>
+            <div>
+                <label for="">Tipo de Tosa:</label>
+                <select name="tipo_tosa" id="tipo tosa">
+                    <option value="">Nenhuma</option>
+                    <option value="padrao">Tosa Padrão</option>
+                    <option value="higienica">Tosa Higiênica</option>
+                    <option value="tesoura">Tosa Tesoura</option>
+                    <option value="raca">Tosa Raça</option>
+                    <option value="bebe">Tosa Bebê</option>
+            </div>
+            </select>
+            <br>
+            <br>
+            <div>
+                <label for="obs">Observações:</label>
+                <br>
+                <textarea name="obs" id="obs" cols="40" rows="1" placeholder="DIGITE ALGUMA OBSERVAÇÃO SOBRE SEU ANIMAL"></textarea>
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Horário - (Não antendemos aos Domingos e às Segundas)</legend>
+            <label for="dias">Indique os Dias da Semana de sua preferência:</label>
+            <br>
+
+            <input type="checkbox" nome="ter" id="ter">
+            <label for="ter">Terça-Feira</label>
+
+            <input type="checkbox" nome="qua" id="qua">
+            <label for="qua">Quarta-Feira</label>
+
+            <input type="checkbox" nome="qui" id="qui">
+            <label for="qui">Quinta-Feira</label>
+
+            <input type="checkbox" nome="Sex" id="Sex">
+            <label for="Sex">Sexta-Feira</label>
+            
+            <input type="checkbox" nome="sab" id="sab">
+            <label for="sab">Sabado</label>
+            <br>
+            <br>
+            <label for="dias">Primeira opção de horario:</label>
+            <input type="date" name="data" id="data">
+            <input type="time" name="haral" id="horal">
+            <br>
+            <br>
+            <label for="dias">Segunda opção de horario:</label>
+            <input type="date" name="data" id="data">
+            <input type="time" name="haral" id="horal">
+        </fieldset>
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+
+</html>

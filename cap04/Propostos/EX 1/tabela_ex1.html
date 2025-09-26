@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabela</title>
+ 
+  <style>
+    :root {
+      --header-blue: #244a7a;
+      --footer-blue: #2e5b97;
+      --cell-bg: #f4f6f8;
+      --border: #d0d7df;
+      --text: #0f172a;
+    }
+ 
+    .equip-table { 
+      font-family: Arial, sans-serif; 
+      color: var(--text);
+      max-width: 600px;
+      margin: 20px auto;
+    }
+ 
+    .tech-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+ 
+    .tech-table thead th {
+      background: var(--header-blue);
+      color: #fff;
+      padding: 10px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      border: 1px solid var(--border);
+    }
+ 
+    .tech-table th,
+    .tech-table td {
+      padding: 10px;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+ 
+    .tech-table th[scope="row"] {
+      text-align: left;
+    }
+ 
+    .tech-table tbody tr:nth-child(odd) td,
+    .tech-table tbody tr:nth-child(odd) th {
+      background: var(--cell-bg);
+    }
+ 
+    .dot {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+    }
+ 
+    .caption {
+      background: var(--footer-blue);
+      color: #fff;
+      padding: 12px;
+      text-align: center;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+</style>
+</head>
+<body>
+ 
+  <div class="equip-table">
+<table class="tech-table">
+<thead>
+<tr>
+<th rowspan="2">Modelo</th>
+<th rowspan="2">Altura</th>
+<th rowspan="2">Largura</th>
+<th colspan="2">Acessórios</th>
+</tr>
+<tr>
+<th>USB</th>
+<th>Wi-Fi</th>
+</tr>
+</thead>
+ 
+      <tbody>
+<tr>
+<th scope="row">Xk-7</th>
+<td>20</td>
+<td>20</td>
+<td><img src="sim.jpg" alt="USB ativo" class="dot"></td>
+<td><img src="nao.jpg" alt="Wi-Fi inativo" class="dot"></td>
+</tr>
+ 
+        <tr>
+<th scope="row">WZ8</th>
+<td>10</td>
+<td>15</td>
+<td><img src="nao.jpg" alt="USB inativo" class="dot"></td>
+<td><img src="sim.jpg" alt="Wi-Fi inativo" class="dot"></td>
+</tr>
+ 
+        <tr>
+<th scope="row">X15</th>
+<td>30</td>
+<td>30</td>
+<td><img src="sim.jpg" alt="USB ativo" class="dot"></td>
+<td><img src="nao.jpg" alt="Wi-Fi ativo" class="dot"></td>
+</tr>
+</tbody>
+</table>
+ 
+    <div class="caption">Dados técnicos do equipamento</div>
+</div>
+ 
+</body>
+</html>
