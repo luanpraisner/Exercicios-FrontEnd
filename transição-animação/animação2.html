@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .caixa {
+        background-color: #fff;
+        width: 150px;
+        height: 200px;
+        padding: 0 25px;
+        display: table;
+        text-align: center;
+        position: absolute;
+        border: solid thin #ccc;
+    }
+
+    .caixa p {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    @-webkit-keyframes anime {
+        0% {
+            background: #FFF;
+            opacity: 0;
+        }
+        40% {
+            background: #FFF;
+            opacity: 0;
+        }
+        50% {
+            background-color: #d33061;
+            opacity: 1;
+        }
+        90% {
+            background-color: #d33061;
+            opacity: 1;
+        }
+        100% {
+            background: #FFF;
+            opacity: 0;
+        }
+    }
+    .animeGo {
+        -webkit-animation: anime 3s ease .5s infinite alternate running;
+    }
+
+    /* Animação - padrão */
+    @keyframes anime {
+        0% {
+            background: #FFF;
+            opacity: 0;
+        }
+        40% {
+            background: #FFF;
+            opacity: 0;
+        }
+        50% {
+            background-color: #d33061;
+            opacity: 1;
+        }
+        90% {
+            background-color: #d33061;
+            opacity: 1;
+        }
+        100% {
+            background: #FFF;
+            opacity: 0;
+        }
+    }
+    .animeGo {
+        animation: anime 3s ease .5s infinite alternate running;
+    }
+</style>
+
+<body>
+    <h1>Transições e animações</h1>
+    <h2>Animação 02</h2>
+    <div class="caixa">#1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque voluptas suscipit, accusantium
+        odit similique sed maiores aperiam unde asperiores iste cupiditate possimus optio aut quibusdam obcaecati
+        praesentium ullam nostrum.</div>
+    <div class="caixa animeGo">#2 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure error dolor eveniet
+        architecto possimus ipsum adipisci reprehenderit quam? Placeat ipsam quae accusantium eum laudantium animi quos
+        excepturi eligendi velit assumenda?</div>
+</body>
+
+</html>
