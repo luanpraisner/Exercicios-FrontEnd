@@ -1,194 +1,226 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8"> <!-- Define a codificação de caracteres para suportar acentos -->
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Faz o site ser responsivo em dispositivos móveis -->
-    <title>CASA DE JOGOS</title>
+    <title>Speed Cars - Super Esportivos</title>
     <style>
-        body {
+        /* === ESTILO GERAL === */
+        * {
             margin: 0;
-            /* Remove margens padrão do navegador */
-            font-family: Arial, sans-serif;
-            /* Define a fonte da página */
-            background: #111;
-            /* Fundo preto do site */
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
 
-        /* Barra de navegação principal */
-        nav {
-            background-color: #1a1a1a;
-            /* Cor de fundo da barra (preto mais claro que o fundo geral) */
-            padding: 0 20px;
-            /* Espaçamento lateral dentro da barra */
+        body {
+            background-color: #0c0c0c;
+            color: #fff;
+            overflow-x: hidden;
         }
 
-        /* Container que separa menu à esquerda e botão de cadastro à direita */
-        nav .menu-container {
+        header {
             display: flex;
-            /* Coloca os itens lado a lado */
             justify-content: space-between;
-            /* Espaço entre o menu (esquerda) e o botão de cadastro (direita) */
             align-items: center;
-            /* Centraliza verticalmente */
+            padding: 20px 50px;
+            background: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            backdrop-filter: blur(10px);
         }
 
-        /* Lista principal do menu */
+        header h1 {
+            color: #ff0000;
+            font-size: 1.8em;
+        }
+
         nav ul {
             list-style: none;
-            /* Remove os marcadores da lista */
-            margin: 0;
-            /* Remove espaçamento externo */
-            padding: 0;
-            /* Remove espaçamento interno */
             display: flex;
-            /* Coloca os itens do menu em linha */
+            gap: 30px;
         }
 
-        /* Cada item do menu */
-        nav ul li {
-            position: relative;
-            /* Necessário para o submenu (dropdown) aparecer abaixo */
-        }
-
-        /* Links do menu */
         nav ul li a {
-            display: block;
-            /* Faz o link ocupar todo o espaço do item */
-            padding: 15px 20px;
-            /* Espaçamento interno (alto/baixo, esquerda/direita) */
+            color: white;
             text-decoration: none;
-            /* Remove o sublinhado do link */
-            color: #fff;
-            /* Cor do texto branca */
-            font-weight: bold;
-            /* Texto em negrito */
+            font-weight: 500;
             transition: 0.3s;
-            /* Suaviza a transição ao passar o mouse */
         }
 
-        /* Efeito ao passar o mouse nos links principais */
         nav ul li a:hover {
-            background: #ffcc00;
-            /* Fundo amarelo */
-            color: #111;
-            /* Texto preto */
+            color: #ff0000;
         }
 
-        /* Submenu (dropdown) escondido inicialmente */
-        nav ul li ul {
-            display: none;
-            /* Fica invisível até passar o mouse */
-            position: absolute;
-            /* Posiciona em relação ao item pai */
-            top: 50px;
-            /* Distância do topo do menu principal */
-            left: 0;
-            /* Alinhado à esquerda */
-            background: #222;
-            /* Fundo do submenu */
-            min-width: 180px;
-            /* Largura mínima */
-            border-radius: 5px;
-            /* Cantos arredondados */
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
-            /* Sombra para destaque */
-            z-index: 100;
-            /* Garante que fique acima de outros elementos */
+        /* === BANNER === */
+        .banner {
+            height: 100vh;
+            background: url('https://images.unsplash.com/photo-1605559424843-9e4fdf7f3b73?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
 
-        /* Cada item dentro do submenu */
-        nav ul li ul li {
+        .banner h2 {
+            font-size: 3em;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px 40px;
+            border-radius: 15px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* === SEÇÃO DE MARCAS === */
+        section {
+            padding: 100px 50px;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            color: #ff0000;
+            margin-bottom: 40px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #1a1a1a;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
             width: 100%;
-            /* O item ocupa toda a largura do submenu */
+            height: 200px;
+            object-fit: cover;
         }
 
-        /* Links dentro do submenu */
-        nav ul li ul li a {
-            padding: 12px 15px;
-            /* Espaçamento interno menor */
-            font-weight: normal;
-            /* Texto normal (sem negrito) */
-            color: #ddd;
-            /* Texto cinza claro */
+        .card h3 {
+            color: #fff;
+            margin: 15px 0;
         }
 
-        /* Efeito ao passar o mouse no submenu */
-        nav ul li ul li a:hover {
-            background: #ffcc00;
-            /* Fundo amarelo */
-            color: #111;
-            /* Texto preto */
+        .card p {
+            color: #ccc;
+            padding: 0 15px 20px;
         }
 
-        /* Exibe o submenu quando passa o mouse no item pai */
-        nav ul li:hover ul {
-            display: block;
-        }
-
-        /* Botão de cadastro no lado direito */
-        .cadastro-btn {
-            background: #ffcc00;
-            /* Fundo amarelo */
-            color: #111;
-            /* Texto preto */
-            padding: 10px 18px;
-            /* Espaçamento interno */
-            border-radius: 5px;
-            /* Cantos arredondados */
-            font-weight: bold;
-            /* Negrito */
+        /* === BOTÃO INTERATIVO === */
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #ff0000;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
             text-decoration: none;
-            /* Remove sublinhado */
-            transition: 0.3s;
-            /* Suaviza a transição ao passar o mouse */
+            transition: background 0.3s;
         }
 
-        /* Efeito hover no botão de cadastro */
-        .cadastro-btn:hover {
-            background: #fff;
-            /* Fundo branco */
-            color: #111;
-            /* Texto preto */
+        .btn:hover {
+            background-color: #b30000;
+        }
+
+        /* === RODAPÉ === */
+        footer {
+            background-color: #111;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #888;
         }
     </style>
 </head>
 
 <body>
-    <!-- Início da barra de navegação -->
-    <nav>
-        <div class="menu-container">
-            <!-- MENU ESQUERDO -->
+
+    <header>
+        <h1>Speed Cars</h1>
+        <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Jogos</a>
-                    <!-- Submenu do cassino -->
-                    <ul>
-                        <li><a href="#">Truco</a></li>
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
-                    </ul>
-                </li>
-
-                <li><a href="#">Quem Somos?</a></li>
-                
-                <li><a href="#">Suporte</a>
-                    <!-- Submenu suporte -->
-                    <ul>
-                        <li><a href="#">Chat Online</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Contato</a></li>
-                    </ul>
-                </li>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#marcas">Marcas</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
+        </nav>
+    </header>
 
-            <!-- BOTÃO CADASTRO NO LADO DIREITO -->
-            <a href="Cadastro.html" class="cadastro-btn">Cadastro</a>
+    <section class="banner" id="home">
+        <h2>Velocidade e Luxo em Cada Detalhe</h2>
+    </section>
+
+    <section id="marcas">
+        <h2>Marcas Esportivas</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=1000&q=80"
+                    alt="Ferrari">
+                <h3>Ferrari</h3>
+                <p>Design italiano e motores potentes que simbolizam o auge da velocidade.</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1617814076302-fb65d3f4b9c5?auto=format&fit=crop&w=1000&q=80"
+                    alt="Lamborghini">
+                <h3>Lamborghini</h3>
+                <p>Estilo agressivo e som inconfundível dos motores V12.</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1000&q=80"
+                    alt="Porsche">
+                <h3>Porsche</h3>
+                <p>Tecnologia e elegância que entregam desempenho e conforto inigualáveis.</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1605721911519-3dfeb3be25e4?auto=format&fit=crop&w=1000&q=80"
+                    alt="McLaren">
+                <h3>McLaren</h3>
+                <p>Engenharia britânica voltada à perfeição e performance em pista.</p>
+            </div>
         </div>
-    </nav>
-    
-    
+        <a href="#contato" class="btn">Entre em contato</a>
+    </section>
+
+    <footer id="contato">
+        <p>© 2025 Speed Cars | Desenvolvido por Praisner 🚗</p>
+    </footer>
+
+    <script>
+        // Efeito simples de rolagem suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
+
 </body>
 
 </html>
